@@ -24,14 +24,14 @@ const Card = ({ data }) => {
       <div className=" flex justify-center items-center">
         <img
           className=" rounded-2xl h-40 w-[95%] object-cover mt-2"
-          src={typeof(data.ThumbnailFiles)=== "object" ? URL.createObjectURL(data.ThumbnailFiles) : data.ThumbnailFiles}
+          src={data.ThumbnailFiles instanceof File ? URL.createObjectURL(data.ThumbnailFiles) : data.ThumbnailFiles}
           alt=""
         />
       </div>
       <div className=" absolute top-33 ml-5 rounded-full border-4 border-white">
         <img
           className=" object-cover h-20 w-20 rounded-full"
-          src={typeof(data.PhotoFiles)=== "object" ? URL.createObjectURL(data.PhotoFiles) : data.PhotoFiles}
+          src={data.PhotoFiles instanceof File? URL.createObjectURL(data.PhotoFiles) : data.PhotoFiles}
           alt=""
         />
       </div>
